@@ -1,0 +1,578 @@
+/* ==============================
+   RESET
+============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+
+/* ==============================
+   HOME
+============================== */
+
+.home {
+  min-height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.header {
+  width: 100%;
+  min-height: 90px;
+  padding: 20px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+
+/* LOGO */
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+
+/* ==============================
+   NAVEGAÇÃO
+============================== */
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.navigation a:hover {
+  opacity: 0.6;
+}
+
+
+/* ==============================
+   AÇÕES DO HEADER
+============================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+
+/* BOTÃO LOGIN */
+
+.btn button {
+  border: none;
+  outline: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  background-color: #0066ff;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn button:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+
+/* ==============================
+   MENU HAMBÚRGUER
+============================== */
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* Animação do X */
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ==============================
+   MAIN
+============================== */
+
+.main {
+  width: 100%;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 48px;
+
+  padding: 50px 6% 70px;
+}
+
+
+/* ==============================
+   COLUNA ESQUERDA
+============================== */
+
+.col1 {
+  width: 35%;
+  flex-shrink: 0;
+}
+
+.col1 h2 {
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.col1 p {
+  max-width: 420px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #cfcfcf;
+  margin-bottom: 30px;
+}
+
+
+/* BOTÃO MAIS */
+
+.col1 > button {
+  border: none;
+  outline: none;
+
+  padding: 13px 30px;
+
+  background-color: #fff;
+  color: #000;
+
+  border-radius: 6px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.col1 > button:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+
+/* ==============================
+   GRID DOS CARDS
+============================== */
+
+.cards {
+  width: 65%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* ==============================
+   CARD
+============================== */
+
+.card {
+  width: 100%;
+  height: 280px;
+
+  background-color: #151515;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.card:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+
+/* ==============================
+   IMAGENS DOS FILMES
+============================== */
+
+.card1 {
+  background-image: url(assets/imagens/afterlife.jpg);
+}
+
+.card2 {
+  background-image: url(assets/imagens/transformers.jpg);
+}
+
+.card3 {
+  background-image: url(assets/imagens/mowgli.jpg);
+}
+
+.card4 {
+  background-image: url(assets/imagens/shift.png);
+}
+
+.card5 {
+  background-image: url(assets/imagens/squidgame.webp);
+}
+
+.card6 {
+  background-image: url(assets/imagens/harrypotter.jpg);
+}
+
+
+/* ==============================
+   TABLETS / TELAS MENORES
+   max-width: 1100px
+============================== */
+
+@media (max-width: 1100px) {
+  .header {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .main {
+    padding-left: 4%;
+    padding-right: 4%;
+    gap: 30px;
+  }
+
+  .navigation ul {
+    gap: 22px;
+  }
+
+  .navigation a {
+    font-size: 15px;
+  }
+
+  .col1 h2 {
+    font-size: clamp(38px, 5vw, 60px);
+  }
+
+  .cards {
+    gap: 15px;
+  }
+
+  .card {
+    height: 250px;
+  }
+}
+
+
+/* ==============================
+   TABLET / CELULAR
+   max-width: 900px
+============================== */
+
+@media (max-width: 900px) {
+  .header {
+    min-height: 80px;
+    padding: 18px 5%;
+  }
+
+  .navigation {
+    position: absolute;
+
+    top: 100%;
+    left: 5%;
+    right: 5%;
+
+    display: block;
+
+    background-color: #111;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    max-height: 0;
+
+    transition: max-height 0.35s ease;
+  }
+
+  .navigation.open {
+    max-height: 300px;
+  }
+
+  .navigation ul {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 10px 0;
+  }
+
+  .navigation li {
+    width: 100%;
+  }
+
+  .navigation a {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 20px;
+
+    font-size: 16px;
+  }
+
+  .navigation a:hover {
+    background-color: #222;
+    opacity: 1;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main {
+    flex-direction: column;
+
+    align-items: center;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    gap: 45px;
+  }
+
+  .col1 {
+    width: 100%;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col1 p {
+    max-width: 600px;
+  }
+
+  .cards {
+    width: 100%;
+  }
+
+  .card {
+    height: 300px;
+  }
+}
+
+
+/* ==============================
+   CELULARES
+   max-width: 600px
+============================== */
+
+@media (max-width: 600px) {
+  .header {
+    min-height: 70px;
+    padding: 15px 5%;
+  }
+
+  .logo h1 {
+    font-size: 23px;
+  }
+
+  .btn button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 35px 5% 45px;
+    gap: 35px;
+  }
+
+  .col1 h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+
+  .col1 p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .col1 > button {
+    padding: 11px 25px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .card {
+    height: 240px;
+    border-radius: 9px;
+  }
+}
+
+
+/* ==============================
+   CELULARES PEQUENOS
+   max-width: 380px
+============================== */
+
+@media (max-width: 380px) {
+  .header {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .logo h1 {
+    font-size: 21px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .btn button {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-toggle span {
+    width: 22px;
+    height: 2px;
+  }
+
+  .main {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .col1 h2 {
+    font-size: 36px;
+  }
+
+  .col1 p {
+    font-size: 13px;
+  }
+
+  .cards {
+    gap: 10px;
+  }
+
+  .card {
+    height: 210px;
+  }
+}
